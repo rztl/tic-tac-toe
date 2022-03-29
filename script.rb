@@ -28,7 +28,7 @@ class Grid
   end
 
   def show
-    @grid_array.each { |row| p row.join }
+    @grid_array.each { |row| puts row.join }
     insert_line
   end
 
