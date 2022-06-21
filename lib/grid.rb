@@ -1,7 +1,10 @@
 class Grid
   attr_reader :grid_array
 
-  def initialize
+  def initialize(grid_array = nil)
+    @grid_array = grid_array 
+    return unless grid_array.nil?
+    
     reset
     show
   end
@@ -28,11 +31,13 @@ class Grid
   end
 
   def show
+    puts '------------------------------------------------'
+    puts 'Creating grid...'
+    puts '------------------------------------------------'
+    puts "\n\n"
+    
     @grid_array.each { |row| puts row.join }
-    insert_line
-  end
-
-  def insert_line
+    
     puts "\n-----------------------------\n\n"
   end
 end
