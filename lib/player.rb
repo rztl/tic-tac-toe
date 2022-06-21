@@ -2,7 +2,7 @@ class Player
   attr_accessor :won
   attr_reader :marker, :name
 
-  def initialize(name, marker, won = false)
+  def initialize(name = nil, marker = nil, won = false)
     @name = name
     @marker = marker
     @won = won
