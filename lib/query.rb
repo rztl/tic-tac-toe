@@ -1,11 +1,15 @@
 require './lib/player'
 
 class Query
-  attr_reader :grid, :i, :j, :player_1, :player_2, :turn
+  attr_accessor :grid, :i, :j, :player_1, :player_2, :turn
 
-  def initialize(grid)
+  def initialize(grid, start_game_switch = true)
     @grid = grid
 
+    start_game if start_game_switch
+  end
+
+  def start_game
     puts 'So, who goes first? Need to tag a name!'
     @first_player_name = gets.chomp
 
