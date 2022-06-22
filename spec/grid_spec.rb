@@ -197,6 +197,70 @@ describe Grid do
         expect(player.won).to eq(true)
       end
     end
+
+    context 'when xxx on left diagnonal' do
+      let(:grid_array) do 
+        [ 
+          [' x ', ' . ', ' . '],
+          [' . ', ' x ', ' . '],
+          [' . ', ' . ', ' x '] 
+        ]
+      end
+      subject(:grid) { Grid.new(grid_array) }
+
+      it 'returns a @won of true' do
+        grid.check_for_win(player)
+        expect(player.won).to eq(true)
+      end
+    end
+
+    context 'when xxx on right diagnonal' do
+      let(:grid_array) do 
+        [ 
+          [' . ', ' . ', ' x '],
+          [' . ', ' x ', ' . '],
+          [' x ', ' . ', ' . '] 
+        ]
+      end
+      subject(:grid) { Grid.new(grid_array) }
+
+      it 'returns a @won of true' do
+        grid.check_for_win(player)
+        expect(player.won).to eq(true)
+      end
+    end
+
+    context 'when ooo on left diagnonal' do
+      let(:grid_array) do 
+        [ 
+          [' o ', ' . ', ' . '],
+          [' . ', ' o ', ' . '],
+          [' . ', ' . ', ' o '] 
+        ]
+      end
+      subject(:grid) { Grid.new(grid_array) }
+
+      it 'returns a @won of true' do
+        grid.check_for_win(player)
+        expect(player.won).to eq(true)
+      end
+    end
+
+    context 'when ooo on right diagnonal' do
+      let(:grid_array) do 
+        [ 
+          [' . ', ' . ', ' o '],
+          [' . ', ' o ', ' . '],
+          [' o ', ' . ', ' . '] 
+        ]
+      end
+      subject(:grid) { Grid.new(grid_array) }
+
+      it 'returns a @won of true' do
+        grid.check_for_win(player)
+        expect(player.won).to eq(true)
+      end
+    end
   end
 end
 
