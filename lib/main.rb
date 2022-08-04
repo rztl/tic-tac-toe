@@ -1,8 +1,3 @@
-require './lib/grid'
-require './lib/player'
-require './lib/query'
+require_relative 'game'
 
-grid = Grid.new 
-Query.new(grid)
-
-
+Game.new.start_game
